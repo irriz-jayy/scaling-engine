@@ -1,5 +1,12 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 export const Homepage = () => {
-  return <h2 className="text-2xl">Hey Guys</h2>;
+  return (
+    <>
+      <div className="min-h-screen bg-yellow-500">
+        <Navbar />
+      </div>
+    </>
+  );
 };
