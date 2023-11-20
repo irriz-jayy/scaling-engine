@@ -1,6 +1,7 @@
 import React from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import MarkerClusterGroup from "react-leaflet-cluster";
 
 const Maps = () => {
   const markers = [
@@ -20,12 +21,14 @@ const Maps = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-
-      {markers.map((marker) => (
-        <Marker position={marker.geocode}>
-          <Popup>{marker.popUp}</Popup>
-        </Marker>
-      ))}
+      {/* Allows grouping of markers when zoomed out to avoid crowding */}
+      <MarkerClusterGroup chunkedLoading>
+        {markers.map((marker) => (
+          <Marker position={marker.geocode}>
+            <Popup>{marker.popUp}</Popup>
+          </Marker>
+        ))}
+      </MarkerClusterGroup>
     </MapContainer>
   );
 };
