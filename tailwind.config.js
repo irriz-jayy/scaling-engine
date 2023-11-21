@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#f9b72b",
+        primary: "#ffcf23",
         secondary: "#190d01",
       },
       fontFamily: {
         logo: "Agbalumo",
-        main: "'Bubblegum Sans'",
+        main: "Bungee",
         paragraph: "Quicksand",
       },
     },

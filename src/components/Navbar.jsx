@@ -22,9 +22,10 @@ const Navbar = () => {
   }, [menuOpen]);
 
   const navItems = [
-    { to: "/orders", text: "Order", exact: true },
-    { to: "/maps", text: "Maps" },
-    { to: "/login", text: "Login" },
+    { to: "/menu", text: "Menu", exact: true },
+    { to: "/maps", text: "Locate" },
+    { to: "/orders", text: "Orders" },
+    { to: "/orders", text: "About" },
   ];
 
   return (
