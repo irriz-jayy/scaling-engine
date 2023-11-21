@@ -6,7 +6,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 const Maps = () => {
   const markers = [
     {
-      geocode: [0.5377, 35.2468],
+      geocode: [0.5138, 35.2907],
       popUp: "Chutney bites, Rupa Mall",
     },
     {
