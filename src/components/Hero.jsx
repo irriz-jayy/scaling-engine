@@ -3,7 +3,7 @@ import logo from "../assets/logo.jpeg";
 
 const Hero = () => {
   return (
-    <div className="flex min-h-[80vh] md:h-[90vh] lg:h-[90vh] flex-col md:flex-row lg:flex-row">
+    <div className="flex min-h-[80vh] md:h-[80vh] lg:h-[80vh] flex-col md:flex-row lg:flex-row">
       <div className="flex flex-col items-center justify-center lg:flex-col h-1/2 md:h-full lg:h-full md:w-1/2 lg:w-1/2">
         <p className="p-2 text-6xl font-main">
           Welcome to the<span className="underline"> home </span>of flavour
