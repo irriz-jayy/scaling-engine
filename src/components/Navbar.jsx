@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       // Set menuOpen to false when the screen size becomes medium or larger
@@ -19,6 +20,12 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [menuOpen]);
+
+  const navItems = [
+    { to: "/orders", text: "Order", exact: true },
+    { to: "/maps", text: "Maps" },
+    { to: "/login", text: "Login" },
+  ];
 
   return (
     <>
@@ -46,66 +53,56 @@ const Navbar = () => {
           }`}
         >
           <ul>
-            <li className="w-full p-2 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-secondary">
-              <NavLink
-                to="/orders"
-                exact
-                className=""
-                activeClassName="bg-primary text-secondary"
+            {navItems.map((item, index) => (
+              <li
+                key={index}
+                className="w-full p-2 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-secondary"
               >
-                Order
-              </NavLink>
-            </li>
-            <li className="w-full p-2 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-secondary">
-              <NavLink
-                to="/maps"
-                className=""
-                activeClassName="bg-primary text-secondary "
-              >
-                Maps
-              </NavLink>
-            </li>
-            <li className="w-full p-2 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-secondary">
-              <Link
-                to="/contact"
-                className=""
-                activeClassName="bg-primary text-secondary "
-              >
-                Contact
-              </Link>
-            </li>
+                {item.exact ? (
+                  <NavLink
+                    to={item.to}
+                    exact
+                    className=""
+                    activeClassName="bg-primary text-secondary"
+                  >
+                    {item.text}
+                  </NavLink>
+                ) : (
+                  <Link
+                    to={item.to}
+                    activeClassName="bg-primary text-secondary"
+                  >
+                    {item.text}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
         {/* big screen nav items */}
         <ul className="hidden md:flex lg:flex">
-          <li className="p-2 mx-2 rounded-md">
-            <NavLink
-              to="/orders"
-              exact
-              className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
-              activeClassName="bg-primary text-secondary"
-            >
-              Order
-            </NavLink>
-          </li>
-          <li className="p-2 mx-2 rounded-md">
-            <NavLink
-              to="/maps"
-              className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
-              activeClassName="bg-primary text-secondary "
-            >
-              Maps
-            </NavLink>
-          </li>
-          <li className="p-2 mx-2 rounded-md">
-            <Link
-              to="/contact"
-              className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
-              activeClassName="bg-primary text-secondary "
-            >
-              Contact
-            </Link>
-          </li>
+          {navItems.map((item, index) => (
+            <li key={index} className="p-2 mx-2 rounded-md">
+              {item.exact ? (
+                <NavLink
+                  to={item.to}
+                  exact
+                  className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
+                  activeClassName="bg-primary text-secondary"
+                >
+                  {item.text}
+                </NavLink>
+              ) : (
+                <NavLink
+                  to={item.to}
+                  className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
+                  activeClassName="bg-primary text-secondary "
+                >
+                  {item.text}
+                </NavLink>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </>
