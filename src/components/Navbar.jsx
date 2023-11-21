@@ -31,8 +31,8 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 flex flex-col items-center justify-between bg-secondary text-primary md:flex-row lg:flex-row">
         <div className="flex items-center justify-between w-full h-14">
-          <Link to="/" className="p-2">
-            Chutney
+          <Link to="/" className="p-2 text-2xl font-logo">
+            Chutney bites
           </Link>
           {/* hamburger menu */}
           <div
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         {/* small screen menu */}
         <div
-          className={`w-full text-center ${
+          className={`w-full text-center  font-main  ${
             menuOpen ? "" : "hidden md:hidden lg:hidden"
           }`}
         >
@@ -56,21 +56,21 @@ const Navbar = () => {
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className="w-full p-2 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-secondary"
+                className="w-full p-2 text-lg transition-colors duration-300 ease-in-out font-main hover:bg-primary hover:text-secondary"
               >
                 {item.exact ? (
                   <NavLink
                     to={item.to}
                     exact
                     className=""
-                    activeClassName="bg-primary text-secondary"
+                    activeClassName=" font-main bg-primary text-secondary"
                   >
                     {item.text}
                   </NavLink>
                 ) : (
                   <Link
                     to={item.to}
-                    activeClassName="bg-primary text-secondary"
+                    activeClassName=" font-main bg-primary text-secondary"
                   >
                     {item.text}
                   </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
                 <NavLink
                   to={item.to}
                   exact
-                  className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
+                  className="p-2 text-lg transition-colors duration-300 ease-in-out rounded-md font-main hover:bg-primary hover:text-secondary "
                   activeClassName="bg-primary text-secondary"
                 >
                   {item.text}
@@ -95,7 +95,7 @@ const Navbar = () => {
               ) : (
                 <NavLink
                   to={item.to}
-                  className="p-2 transition-colors duration-300 ease-in-out rounded-md hover:bg-primary hover:text-secondary focus:outline-none focus:ring focus:border-blue-300"
+                  className="p-2 text-lg transition-colors duration-300 ease-in-out rounded-md font-main hover:bg-primary hover:text-secondary "
                   activeClassName="bg-primary text-secondary "
                 >
                   {item.text}

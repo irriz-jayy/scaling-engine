@@ -7,6 +7,11 @@ export default {
         primary: "#f9b72b",
         secondary: "#190d01",
       },
+      fontFamily: {
+        logo: "Agbalumo",
+        main: "'Bubblegum Sans'",
+        paragraph: "Quicksand",
+      },
     },
   },
   plugins: [],
