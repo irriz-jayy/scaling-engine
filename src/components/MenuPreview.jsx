@@ -6,6 +6,7 @@ import taco from "../assets/food assets/taco.jpg";
 import thover from "../assets/food assets/tacohover.jpg";
 import fries from "../assets/food assets/fries.jpg";
 import fhover from "../assets/food assets/frieshover.jpg";
+import { Link } from "react-router-dom";
 
 const MenuPreview = () => {
   const food = [
@@ -55,10 +56,13 @@ const MenuPreview = () => {
           <MealCard key={index} data={item} />
         ))}
       </div>
-      <div className="text-center">
-        <button className="w-48 h-12 p-2 my-2 border-4 rounded-md border-secondary hover:border-primary bg-primary text-secondary hover:bg-secondary hover:text-primary font-main">
+      <div className="flex items-center justify-center h-12 text-center ">
+        <Link
+          to="/menu"
+          className="w-48 h-12 p-2 my-2 border-4 rounded-md border-secondary hover:border-primary bg-primary text-secondary hover:bg-secondary hover:text-primary font-main"
+        >
           View menu 🍔
-        </button>
+        </Link>
       </div>
     </div>
   );
