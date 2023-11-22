@@ -32,7 +32,7 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 flex flex-col items-center justify-between bg-secondary text-primary md:flex-row lg:flex-row">
         <div className="flex items-center justify-between w-full h-14">
-          <Link to="/" className="p-2 text-2xl font-logo">
+          <Link to="/" className="p-2 text-2xl font-main">
             Chutney bites
           </Link>
           {/* hamburger menu */}
