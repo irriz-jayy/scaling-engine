@@ -4,6 +4,7 @@ import instagram from "../assets/icons/png/bxl-instagram.png";
 import twitter from "../assets/icons/png/bxl-twitter.png";
 import youtube from "../assets/icons/png/bxl-youtube.png";
 import spotify from "../assets/icons/png/bxl-spotify.png";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const icons = [
@@ -42,21 +43,15 @@ const Contact = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Check if both name and email are provided
     if (formData.name && formData.email) {
       const alertMessage = `Hey ${formData.name}. Check ${formData.email} for newsletters`;
-
-      // Display the alert with the composed message
-      alert(alertMessage);
-
-      // Clear the form data
+      toast.success(alertMessage);
       setFormData({
         name: "",
         email: "",
       });
     } else {
-      // If either name or email is missing, show an error alert
-      alert("Please provide both name and email address.");
+      toast.error("Please provide both name and email address.");
     }
   }
 
