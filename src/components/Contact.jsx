@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import facebook from "../assets/icons/png/bxl-facebook.png";
 import instagram from "../assets/icons/png/bxl-instagram.png";
 import twitter from "../assets/icons/png/bxl-twitter.png";
@@ -33,6 +33,33 @@ const Contact = () => {
       href: "",
     },
   ];
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    // Check if both name and email are provided
+    if (formData.name && formData.email) {
+      const alertMessage = `Hey ${formData.name}. Check ${formData.email} for newsletters`;
+
+      // Display the alert with the composed message
+      alert(alertMessage);
+
+      // Clear the form data
+      setFormData({
+        name: "",
+        email: "",
+      });
+    } else {
+      // If either name or email is missing, show an error alert
+      alert("Please provide both name and email address.");
+    }
+  }
+
   return (
     <div className="bg-secondary">
       <header className="p-2 text-4xl text-center font-main text-primary">
@@ -48,24 +75,32 @@ const Contact = () => {
           </a>
         ))}
       </div>
-      {/* newsletter section */}
       <div className="flex flex-col text-lg text-center min-h-24 text-primary font-paragraph">
         <p>Subscribe to our newsletter</p>
-        <form className="grid grid-cols-2 p-2 font-bold text-secondary">
+        <form
+          className="grid grid-cols-2 p-2 font-bold text-secondary"
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <input
             type="text"
             placeholder="Name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="h-12 p-2 mr-2 rounded-md bg-primary placeholder:text-secondary"
           />
           <input
             type="email"
             placeholder="Email Address"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className="h-12 p-2 mr-2 rounded-md bg-primary placeholder:text-secondary"
           />
           <button className="col-span-2 p-2 my-2 border-4 rounded-md border-secondary hover:border-primary bg-primary text-secondary hover:bg-secondary hover:text-primary font-main">
             Submit
           </button>
-        </form>
+        </form>{" "}
       </div>
     </div>
   );
