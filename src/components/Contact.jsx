@@ -41,7 +41,7 @@ const Contact = () => {
           Feel free to reach out to us for any concern
         </p>
       </header>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between p-2">
         {icons.map((icon, index) => (
           <a key={index} href={icon.href} className="">
             <img src={icon.image} alt={icon.name} className="" />
