@@ -48,6 +48,25 @@ const Contact = () => {
           </a>
         ))}
       </div>
+      {/* newsletter section */}
+      <div className="flex flex-col text-lg text-center min-h-24 text-primary font-paragraph">
+        <p>Subscribe to our newsletter</p>
+        <form className="grid grid-cols-2 p-2 font-bold text-secondary">
+          <input
+            type="text"
+            placeholder="Name"
+            className="h-12 p-2 mr-2 rounded-md bg-primary placeholder:text-secondary"
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="h-12 p-2 mr-2 rounded-md bg-primary placeholder:text-secondary"
+          />
+          <button className="col-span-2 p-2 my-2 border-4 rounded-md border-secondary hover:border-primary bg-primary text-secondary hover:bg-secondary hover:text-primary font-main">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
