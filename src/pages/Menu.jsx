@@ -10,21 +10,21 @@ import MealCard from "../components/MealCard";
 const Menu = () => {
   const categories = [
     {
-      name: "fries",
+      name: "fries 🍟",
     },
     {
-      name: "burgers",
-    },
-
-    {
-      name: "tacos",
-    },
-    {
-      name: "chicken",
+      name: "burgers 🍔",
     },
 
     {
-      name: "pizza",
+      name: "tacos 🌮",
+    },
+    {
+      name: "chicken 🍗",
+    },
+
+    {
+      name: "pizza 🍕",
     },
   ];
   const food = [
