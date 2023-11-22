@@ -12,7 +12,7 @@ const MealCard = ({ data }) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       />
-      <div className="h-40 text-center border">
+      <div className="text-center border min-h-40">
         <p className="text-lg font-main">{data.name}</p>
         <p className="font-paragraph">{data.text}</p>
         <p className="text-lg font-main">{data.price}</p>

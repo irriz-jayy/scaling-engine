@@ -41,7 +41,7 @@ const MenuPreview = () => {
     },
   ];
   return (
-    <div className="h-screen bg-secondary">
+    <div className="flex flex-col min-h-screen bg-secondary">
       <div className="my-2">
         <header className="p-2 text-4xl text-center font-main text-primary">
           Our <span className="underline">menu</span>
@@ -50,9 +50,11 @@ const MenuPreview = () => {
           Feast on our favourite bites
         </p>
       </div>
-      {food.map((item, index) => (
-        <MealCard key={index} data={item} />
-      ))}
+      <div className="flex flex-col items-center justify-center gap-4 p-2 md:flex-row">
+        {food.map((item, index) => (
+          <MealCard key={index} data={item} />
+        ))}
+      </div>
     </div>
   );
 };
