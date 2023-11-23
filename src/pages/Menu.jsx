@@ -142,9 +142,15 @@ const Menu = () => {
         </div>
         {/* menu section */}
         <div className="flex flex-col flex-wrap items-center justify-center min-h-screen gap-4 p-2 md:flex-row">
-          {filteredFood.map((item, index) => (
-            <MealCard key={index} data={item} />
-          ))}
+          {filteredFood.length === 0 ? (
+            <p className="text-lg text-center text-primary font-paragraph">
+              Food not currently available for this category.
+            </p>
+          ) : (
+            filteredFood.map((item, index) => (
+              <MealCard key={index} data={item} />
+            ))
+          )}
         </div>
       </div>
     </>
