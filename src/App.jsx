@@ -7,6 +7,7 @@ import Menu from "./pages/Menu";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
       <Footer />
       <ToastContainer />

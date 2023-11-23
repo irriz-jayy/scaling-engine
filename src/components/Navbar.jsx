@@ -25,7 +25,7 @@ const Navbar = () => {
     { to: "/menu", text: "Menu", exact: true },
     { to: "/maps", text: "Locate" },
     { to: "/orders", text: "Orders" },
-    { to: "/orders", text: "About" },
+    { to: "/about-us", text: "About" },
   ];
 
   return (
