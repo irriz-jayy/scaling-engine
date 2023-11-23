@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import chicken from "../assets/food assets/chicken.jpg";
 import chover from "../assets/food assets/chickenhover.jpg";
 import taco from "../assets/food assets/taco.jpg";
@@ -9,23 +9,11 @@ import MealCard from "../components/MealCard";
 
 const Menu = () => {
   const categories = [
-    {
-      name: "fries 🍟",
-    },
-    {
-      name: "burgers 🍔",
-    },
-
-    {
-      name: "tacos 🌮",
-    },
-    {
-      name: "chicken 🍗",
-    },
-
-    {
-      name: "pizza 🍕",
-    },
+    { name: "fries 🍟", id: "fries" },
+    { name: "burgers 🍔", id: "burgers" },
+    { name: "tacos 🌮", id: "tacos" },
+    { name: "chicken 🍗", id: "chicken" },
+    { name: "pizza 🍕", id: "pizza" },
   ];
   const food = [
     {
@@ -119,6 +107,12 @@ const Menu = () => {
       buttonText: "Order 🍟",
     },
   ];
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const filteredFood = selectedCategory
+    ? food.filter((item) => item.name.toLowerCase().includes(selectedCategory))
+    : food;
   return (
     <>
       <div className="min-h-screen bg-secondary">
@@ -126,10 +120,15 @@ const Menu = () => {
         <div className="sticky z-10 flex flex-col w-full border top-14 bg-primary ">
           <header className="text-lg font-main">Categories</header>
           <div className="flex justify-between">
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <button
-                key={index}
-                className="w-48 h-12 p-2 my-2 border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main"
+                key={category.id}
+                className={`w-48 h-12 p-2 my-2 border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main ${
+                  selectedCategory === category.id
+                    ? "bg-primary text-secondary"
+                    : ""
+                }`}
+                onClick={() => setSelectedCategory(category.id)}
               >
                 {category.name}
               </button>
@@ -138,7 +137,7 @@ const Menu = () => {
         </div>
         {/* menu section */}
         <div className="flex flex-col flex-wrap items-center justify-center min-h-screen gap-4 p-2 md:flex-row">
-          {food.map((item, index) => (
+          {filteredFood.map((item, index) => (
             <MealCard key={index} data={item} />
           ))}
         </div>
