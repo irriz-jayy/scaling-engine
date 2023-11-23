@@ -7,7 +7,7 @@ const Footer = () => {
       underlined: "links",
       items: [
         { text: "Menu", href: "/menu" },
-        { text: "Locate restaraunts", href: "/locate" },
+        { text: "Locate restaraunts", href: "/maps" },
         { text: "Check orders", href: "/orders" },
       ],
     },

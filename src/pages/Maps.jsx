@@ -17,20 +17,45 @@ const Maps = () => {
   ];
   return (
     <>
-      <MapContainer center={[0.5176, 35.2781]} zoom={14} className="h-60 w-96">
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {/* Allows grouping of markers when zoomed out to avoid crowding */}
-        <MarkerClusterGroup chunkedLoading>
-          {markers.map((marker) => (
-            <Marker position={marker.geocode}>
-              <Popup>{marker.popUp}</Popup>
-            </Marker>
-          ))}
-        </MarkerClusterGroup>
-      </MapContainer>
+      <div className="flex flex-col h-[70vh]">
+        <div className="w-full h-1/2 bg-primary">
+          <header className="p-2 mb-4 text-2xl font-main text-secondary">
+            Explore Our Branches
+          </header>
+          <p className="p-2 text-lg font-paragraph">
+            We have branches in all major malls across Eldoret
+          </p>
+          <ul className="p-2 font-paragraph">
+            <li>
+              Chutney Bites, <span className="font-main">Rupa Mall</span>
+            </li>
+            <li>
+              Chutney Bites, <span className="font-main">Zion mall</span>
+            </li>
+            <li>
+              Chutney Bites, <span className="font-main">Highlands mall</span>
+            </li>
+          </ul>
+        </div>
+        <MapContainer
+          center={[0.5176, 35.2781]}
+          zoom={14}
+          className="w-full h-1/2"
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {/* Allows grouping of markers when zoomed out to avoid crowding */}
+          <MarkerClusterGroup chunkedLoading>
+            {markers.map((marker) => (
+              <Marker position={marker.geocode}>
+                <Popup>{marker.popUp}</Popup>
+              </Marker>
+            ))}
+          </MarkerClusterGroup>
+        </MapContainer>
+      </div>
     </>
   );
 };
