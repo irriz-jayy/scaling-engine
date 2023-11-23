@@ -25,8 +25,8 @@ const Footer = () => {
       underlined: "us",
 
       items: [
-        { text: "About Us Overview", href: "/about-us" },
-        { text: "News", href: "/news" },
+        { text: "About Us Overview", href: "/about-us#overview" },
+        { text: "News", href: "/about-us#news" },
         { text: "Our values", href: "/values" },
       ],
     },
