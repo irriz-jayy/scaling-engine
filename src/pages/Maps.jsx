@@ -17,8 +17,8 @@ const Maps = () => {
   ];
   return (
     <>
-      <div className="flex flex-col h-[70vh]">
-        <div className="w-full h-1/2 bg-primary">
+      <div className="flex flex-col h-[70vh] md:flex-row">
+        <div className="w-full h-1/2 bg-primary md:w-1/2 md:h-full">
           <header className="p-2 mb-4 text-2xl font-main text-secondary">
             Explore Our Branches
           </header>
@@ -40,7 +40,7 @@ const Maps = () => {
         <MapContainer
           center={[0.5176, 35.2781]}
           zoom={14}
-          className="w-full h-1/2"
+          className="w-full h-1/2 md:w-1/2 md:h-full"
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
