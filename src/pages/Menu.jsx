@@ -9,6 +9,7 @@ import MealCard from "../components/MealCard";
 
 const Menu = () => {
   const categories = [
+    { name: "All", id: "all" },
     { name: "fries 🍟", id: "fries" },
     { name: "burgers 🍔", id: "burgers" },
     { name: "tacos 🌮", id: "tacos" },
@@ -108,11 +109,15 @@ const Menu = () => {
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const filteredFood = selectedCategory
-    ? food.filter((item) => item.name.toLowerCase().includes(selectedCategory))
-    : food;
+  const filteredFood =
+    selectedCategory === "all"
+      ? food
+      : food.filter((item) =>
+          item.name.toLowerCase().includes(selectedCategory)
+        );
+
   return (
     <>
       <div className="min-h-screen bg-secondary">
