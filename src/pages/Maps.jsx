@@ -40,7 +40,7 @@ const Maps = () => {
         <MapContainer
           center={[0.5176, 35.2781]}
           zoom={14}
-          className="w-full h-1/2 md:w-1/2 md:h-full"
+          className="z-[-10] w-full h-1/2 md:w-1/2 md:h-full"
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
