@@ -15,9 +15,9 @@ const Footer = () => {
       title: "Contact",
       underlined: "us",
       items: [
-        { text: "Contact Us Overview", href: "/contact-us" },
-        { text: "Customer feedback", href: "/feedback" },
-        { text: "Frequently Asked Questions", href: "/FAQs" },
+        { text: "Contact Us Overview", href: "/contact-us#overview" },
+        { text: "Customer feedback", href: "/contact-us#feedback" },
+        { text: "Frequently Asked Questions", href: "/contact-us#FAQs" },
       ],
     },
     {
@@ -27,7 +27,7 @@ const Footer = () => {
       items: [
         { text: "About Us Overview", href: "/about-us#overview" },
         { text: "News", href: "/about-us#news" },
-        { text: "Our values", href: "/values" },
+        { text: "Our values", href: "/about-us#values" },
       ],
     },
   ];

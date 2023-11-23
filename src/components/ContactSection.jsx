@@ -6,7 +6,7 @@ const ContactSection = () => {
     // whole page div
     <div className="min-h-screen bg-primary text-secondary">
       {/* header */}
-      <div>
+      <div id="overview">
         <header className="p-4 text-4xl font-main">Contact us</header>
         <p className="p-4 text-lg font-paragraph">
           Looking for nutrition information, employment details or want to
@@ -14,9 +14,11 @@ const ContactSection = () => {
         </p>
       </div>
       {/* FAQs section */}
-      <FAQs />
+      <section id="FAQs">
+        <FAQs />
+      </section>
       {/* feedback section */}
-      <div>
+      <div id="feedback">
         <p className="p-4 text-4xl font-main">Feedback</p>
         <p className="p-4 text-base font-paragraph">
           Whether you have questions, feedback or comments about something you
