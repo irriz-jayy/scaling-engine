@@ -6,6 +6,7 @@ import community from "../assets/community.jpg";
 import energy from "../assets/energy.jpg";
 import kids from "../assets/kids.jpg";
 import inclusivity from "../assets/inclusivity.jpg";
+import arrow from "../assets/icons/png/arrow.png";
 
 const About = () => {
   const sections = [
@@ -106,8 +107,11 @@ const About = () => {
                   <div className="p-2 h-30">
                     <p className="text-lg font-main">{item.title}</p>
                     <p className="text-sm font-paragraph">{item.text}</p>
-                    <button className="w-48 h-12 p-2 my-2 border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main">
-                      Read more
+                    <button className="flex w-48 h-12 p-2 my-2 border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main">
+                      Read more{"  "}
+                      <span>
+                        <img src={arrow} alt="arrowright" />
+                      </span>
                     </button>
                   </div>{" "}
                 </div>
