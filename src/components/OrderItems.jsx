@@ -38,6 +38,10 @@ const OrderItems = () => {
       setOrders(updatedOrders);
     }
   }
+  const totalAmount = orders.reduce(
+    (total, order) => total + order.quantity * order.price,
+    0
+  );
 
   return (
     <>
@@ -67,7 +71,7 @@ const OrderItems = () => {
             {/* Product Image */}
             <img
               src={order.image}
-              className="w-40 h-40 ml-2 border rounded-md"
+              className="w-40 h-40 ml-2 border rounded-md md:w-1/4"
             />
 
             {/* Product Details Container */}
@@ -113,6 +117,18 @@ const OrderItems = () => {
             </div>
           </div>
         ))}
+      </div>
+      {/* total section */}
+      <div className="flex items-center justify-center border bg-primary text-secondary">
+        <div className="grid w-3/4 h-24 grid-cols-2 border">
+          <div className="w-1/2 text-center font-main">Total</div>
+          <div className="w-1/2">
+            <p className="font-main">{totalAmount} ksh</p>
+          </div>
+          <button className="h-12 col-span-2 mx-16 border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main">
+            Checkout
+          </button>
+        </div>
       </div>
     </>
   );
