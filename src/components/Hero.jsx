@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.jpeg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -14,9 +15,12 @@ const Hero = () => {
           order, and experience the irresistible charm of Chutney Bites. Good
           food, great taste, and convenience – that's the Chutney Bites promise
         </p>
-        <button className="w-48 h-12 p-2 my-2 border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main">
+        <Link
+          to="/orders"
+          className="w-48 h-12 p-2 my-2 text-center border-4 rounded-md border-primary hover:border-secondary bg-secondary text-primary hover:bg-primary hover:text-secondary font-main"
+        >
           Order Now 🍔
-        </button>
+        </Link>
       </div>
       <img
         src={logo}

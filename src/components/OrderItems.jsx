@@ -1,30 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import chicken from "../assets/food assets/chicken.jpg";
-import taco from "../assets/food assets/taco.jpg";
-import fries from "../assets/food assets/fries.jpg";
+import { fetchOrders } from "../api/orders";
 
 const OrderItems = () => {
-  const [orders, setOrders] = useState([
-    {
-      image: chicken,
-      name: "Fried Chicken",
-      price: 320,
-      quantity: 2,
-    },
-    {
-      image: taco,
-      name: "Beef Tacos",
-      price: 250,
-      quantity: 10,
-    },
-    {
-      image: fries,
-      name: "Fries",
-      price: 200,
-      quantity: 2,
-    },
-  ]);
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    // Fetch orders when the component mounts
+    const fetchData = async () => {
+      try {
+        const ordersData = await fetchOrders();
+        setOrders(ordersData);
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   function handleAdd(index) {
     const updatedOrders = [...orders];
@@ -84,18 +77,15 @@ const OrderItems = () => {
           <p className="text-lg text-center font-main">Start ordering</p>
         ) : (
           orders.map((order, index) => (
-            <div
-              className="flex items-center w-full h-48 gap-2 border"
-              key={index}
-            >
+            <div className="flex items-center w-full h-48 gap-2" key={index}>
               {/* Product Image */}
               <img
                 src={order.image}
-                className="w-40 h-40 ml-2 border rounded-md md:w-1/4"
+                className="w-40 h-40 ml-2 rounded-md md:w-1/4"
               />
 
               {/* Product Details Container */}
-              <div className="flex flex-col justify-between w-3/4 h-40 p-2 mr-2 border font-main">
+              <div className="flex flex-col justify-between w-3/4 h-40 p-2 mr-2 font-main">
                 {/* Product Name */}
                 <p className="text-lg">{order.name}</p>
 
@@ -137,8 +127,8 @@ const OrderItems = () => {
         )}
       </div>
       {/* total section */}
-      <div className="flex items-center justify-center border bg-primary text-secondary">
-        <div className="grid w-3/4 h-24 grid-cols-2 border">
+      <div className="flex items-center justify-center bg-primary text-secondary">
+        <div className="grid w-3/4 h-24 grid-cols-2">
           <div className="w-1/2 text-center font-main">Total</div>
           <div className="w-1/2">
             <p className="font-main">{total} ksh</p>

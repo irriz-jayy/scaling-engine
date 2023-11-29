@@ -1,0 +1,22 @@
+{
+  "orders": [
+    {
+      "image": "src/assets/food assets/chicken.jpg",
+      "name": "Fried Chicken",
+      "price": 320,
+      "quantity": 2
+    },
+    {
+      "image": "src/assets/food assets/taco.jpg",
+      "name": "Beef Tacos",
+      "price": 250,
+      "quantity": 10
+    },
+    {
+      "image": "src/assets/food assets/fries.jpg",
+      "name": "Fries",
+      "price": 200,
+      "quantity": 2
+    }
+  ]
+}
