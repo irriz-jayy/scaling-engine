@@ -31,6 +31,7 @@ const OrderItems = () => {
     updatedOrders[index].quantity += 1;
     setOrders(updatedOrders);
   }
+
   function handleDelete(index) {
     const updatedOrders = [...orders];
     if (updatedOrders[index].quantity > 1) {
@@ -38,10 +39,23 @@ const OrderItems = () => {
       setOrders(updatedOrders);
     }
   }
+
   const totalAmount = orders.reduce(
     (total, order) => total + order.quantity * order.price,
     0
   );
+
+  function handleRemove(index) {
+    const confirmation = window.confirm(
+      `Do you want to remove ${orders[index].name}?`
+    );
+
+    if (confirmation) {
+      const updatedOrders = [...orders];
+      updatedOrders.splice(index, 1); // Remove the item at the specified index
+      setOrders(updatedOrders);
+    }
+  }
 
   return (
     <>
@@ -111,7 +125,10 @@ const OrderItems = () => {
               </div>
 
               {/* Remove Button */}
-              <button className="w-full h-8 mt-2 text-white bg-red-500 rounded-md hover:bg-red-400">
+              <button
+                className="w-full h-8 mt-2 text-white bg-red-500 rounded-md hover:bg-red-400"
+                onClick={() => handleRemove(index)}
+              >
                 Remove
               </button>
             </div>
