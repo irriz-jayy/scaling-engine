@@ -127,7 +127,7 @@ const OrderItems = () => {
         )}
       </div>
       {/* total section */}
-      <div className="flex items-center justify-center bg-primary text-secondary">
+      <div className="flex items-center justify-center bg-secondary text-primary">
         <div className="grid w-3/4 h-24 grid-cols-2">
           <div className="w-1/2 text-center font-main">Total</div>
           <div className="w-1/2">
