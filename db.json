@@ -42,6 +42,41 @@
       "price": 320,
       "quantity": 1,
       "id": 1704354976175
+    },
+    {
+      "name": "Fries",
+      "image": "/src/assets/food assets/fries.jpg",
+      "price": "200 ksh",
+      "quantity": 1,
+      "id": 1704355182677
+    },
+    {
+      "name": "Fries",
+      "image": "/src/assets/food assets/fries.jpg",
+      "price": "200 ksh",
+      "quantity": 1,
+      "id": 1704355207421
+    },
+    {
+      "name": "Fries",
+      "image": "/src/assets/food assets/fries.jpg",
+      "price": "200 ksh",
+      "quantity": 1,
+      "id": 1704355238725
+    },
+    {
+      "name": "Fries",
+      "image": "/src/assets/food assets/fries.jpg",
+      "price": "200 ksh",
+      "quantity": 1,
+      "id": 1704355272979
+    },
+    {
+      "name": "Fries",
+      "image": "/src/assets/food assets/fries.jpg",
+      "price": "200 ksh",
+      "quantity": 1,
+      "id": 1704355310138
     }
   ]
 }

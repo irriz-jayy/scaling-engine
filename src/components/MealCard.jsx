@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { addOrder } from "../api/orders";
+import { toast } from "react-toastify";
 
 const MealCard = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -15,9 +16,9 @@ const MealCard = ({ data }) => {
       });
 
       // Log the added order (you can handle it as needed)
-      console.log("Item added to orders:", addedOrder);
+      toast.success(`Added ${addedOrder.name} to your orders`);
     } catch (error) {
-      console.error("Error adding item to orders:", error);
+      toast.error("Error adding item to orders:", error);
     }
   };
 
