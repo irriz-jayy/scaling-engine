@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchOrders } from "../api/orders";
+import { fetchOrders, removeOrder } from "../api/orders";
 
 const OrderItems = () => {
   const [orders, setOrders] = useState([]);
@@ -25,23 +25,18 @@ const OrderItems = () => {
     setOrders(updatedOrders);
   }
 
-  function handleDelete(index) {
-    const updatedOrders = [...orders];
-    if (updatedOrders[index].quantity > 1) {
-      updatedOrders[index].quantity -= 1;
-    } else {
-      // Remove the item if quantity is 1
-      updatedOrders.splice(index, 1);
-    }
-    setOrders(updatedOrders);
-  }
-
   function handleRemove(index) {
     const confirmation = window.confirm(
       `Do you want to remove ${orders[index].name}?`
     );
 
     if (confirmation) {
+      const orderId = orders[index].id;
+
+      // Call the removeOrder function to remove the order from the server
+      removeOrder(orderId);
+
+      // Update the local state to reflect the removal
       const updatedOrders = [...orders];
       updatedOrders.splice(index, 1);
       setOrders(updatedOrders);

@@ -1,11 +1,3 @@
 {
-  "orders": [
-    {
-      "name": "Fries",
-      "image": "/src/assets/food assets/fries.jpg",
-      "price": 200,
-      "quantity": 1,
-      "id": 1704355496573
-    }
-  ]
+  "orders": []
 }

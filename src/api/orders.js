@@ -44,3 +44,17 @@ export const addOrder = async (newOrder) => {
 };
 
 // Add other functions (update, delete, etc.) as needed
+export const removeOrder = async (orderId) => {
+  try {
+    const response = await fetch(`${API_URL}/${orderId}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to remove order");
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
