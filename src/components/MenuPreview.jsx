@@ -1,46 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MealCard from "./MealCard";
-import chicken from "../assets/food assets/chicken.jpg";
-import chover from "../assets/food assets/chickenhover.jpg";
-import taco from "../assets/food assets/taco.jpg";
-import thover from "../assets/food assets/tacohover.jpg";
-import fries from "../assets/food assets/fries.jpg";
-import fhover from "../assets/food assets/frieshover.jpg";
 import { Link } from "react-router-dom";
+import { fetchFoods } from "../api/food";
 
 const MenuPreview = () => {
-  const food = [
-    {
-      images: {
-        default: chicken,
-        hover: chover,
-      },
-      name: "Fried chicken",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "320 ksh",
-      buttonText: "Order 🍗",
-    },
-    {
-      images: {
-        default: taco,
-        hover: thover,
-      },
-      name: "Beef tacos",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "250 ksh",
-      buttonText: "Order 🌮",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
-      buttonText: "Order 🍟",
-    },
-  ];
+  const [foods, setFoods] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedFoods = await fetchFoods();
+        setFoods(fetchedFoods);
+      } catch (error) {
+        // Handle error, e.g., display an error message
+        console.error("Error fetching foods:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className="flex flex-col min-h-screen bg-secondary">
       <div className="my-2">
@@ -52,7 +29,7 @@ const MenuPreview = () => {
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 p-2 md:flex-row">
-        {food.map((item, index) => (
+        {foods.map((item, index) => (
           <MealCard key={index} data={item} />
         ))}
       </div>

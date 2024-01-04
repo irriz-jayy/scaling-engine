@@ -26,8 +26,8 @@ const MealCard = ({ data }) => {
     <div className="w-80 bg-primary">
       <img
         className="object-contain w-full transition-opacity duration-300 h-60"
-        src={isHovered ? data.images.hover : data.images.default}
-        alt="chicken"
+        src={isHovered ? data.hover_image : data.default_image}
+        alt={data.name}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       />
