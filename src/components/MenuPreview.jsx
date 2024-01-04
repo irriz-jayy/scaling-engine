@@ -5,11 +5,14 @@ import { fetchFoods } from "../api/food";
 
 const MenuPreview = () => {
   const [foods, setFoods] = useState([]);
+  const [displayedFoods, setDisplayedFoods] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const fetchedFoods = await fetchFoods();
         setFoods(fetchedFoods);
+        setDisplayedFoods(fetchedFoods.slice(0, 3)); // Display only the first three items
       } catch (error) {
         // Handle error, e.g., display an error message
         console.error("Error fetching foods:", error.message);
@@ -18,6 +21,7 @@ const MenuPreview = () => {
 
     fetchData();
   }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-secondary">
       <div className="my-2">
@@ -29,7 +33,7 @@ const MenuPreview = () => {
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 p-2 md:flex-row">
-        {foods.map((item, index) => (
+        {displayedFoods.map((item, index) => (
           <MealCard key={index} data={item} />
         ))}
       </div>
