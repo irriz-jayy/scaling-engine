@@ -24,7 +24,7 @@ const Menu = () => {
       },
       name: "Fried chicken",
       text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "320 ksh",
+      price: 320,
       buttonText: "Order 🍗",
     },
     {

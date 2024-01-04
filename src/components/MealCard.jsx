@@ -1,7 +1,25 @@
 import React, { useState } from "react";
+import { addOrder } from "../api/orders";
 
 const MealCard = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleAddToOrder = async () => {
+    try {
+      // Call the addOrder function to add the item to orders
+      const addedOrder = await addOrder({
+        name: data.name,
+        image: data.images.default,
+        price: data.price,
+        quantity: 1, // You can set the initial quantity here
+      });
+
+      // Log the added order (you can handle it as needed)
+      console.log("Item added to orders:", addedOrder);
+    } catch (error) {
+      console.error("Error adding item to orders:", error);
+    }
+  };
 
   return (
     <div className="w-80 bg-primary">
@@ -16,7 +34,10 @@ const MealCard = ({ data }) => {
         <p className="text-lg font-main">{data.name}</p>
         <p className="font-paragraph">{data.text}</p>
         <p className="text-lg font-main">{data.price}</p>
-        <button className="h-10 my-2 border rounded-md font-main w-36 bg-secondary text-primary hover:bg-primary hover:text-secondary hover:border-4 hover:border-secondary">
+        <button
+          className="h-10 my-2 border rounded-md font-main w-36 bg-secondary text-primary hover:bg-primary hover:text-secondary hover:border-4 hover:border-secondary"
+          onClick={handleAddToOrder}
+        >
           {data.buttonText}
         </button>
       </div>

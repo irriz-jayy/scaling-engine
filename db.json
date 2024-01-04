@@ -17,6 +17,31 @@
       "name": "Fries",
       "price": 200,
       "quantity": 2
+    },
+    {
+      "name": "Fries",
+      "price": "200 ksh",
+      "quantity": 1,
+      "id": 1704354697700
+    },
+    {
+      "name": "Beef tacos",
+      "price": "250 ksh",
+      "quantity": 1,
+      "id": 1704354733226
+    },
+    {
+      "name": "Fried chicken",
+      "price": 320,
+      "quantity": 1,
+      "id": 1704354910409
+    },
+    {
+      "name": "Fried chicken",
+      "image": "/src/assets/food assets/chicken.jpg",
+      "price": 320,
+      "quantity": 1,
+      "id": 1704354976175
     }
   ]
 }
