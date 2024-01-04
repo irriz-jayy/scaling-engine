@@ -34,7 +34,7 @@ const Menu = () => {
       },
       name: "Beef tacos",
       text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "250 ksh",
+      price: 250,
       buttonText: "Order 🌮",
     },
     {
@@ -44,7 +44,7 @@ const Menu = () => {
       },
       name: "Fries",
       text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
+      price: 200,
       buttonText: "Order 🍟",
     },
     {
@@ -54,7 +54,7 @@ const Menu = () => {
       },
       name: "Fries",
       text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
+      price: 200,
       buttonText: "Order 🍟",
     },
     {
@@ -64,7 +64,7 @@ const Menu = () => {
       },
       name: "Fries",
       text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
+      price: 200,
       buttonText: "Order 🍟",
     },
     {
@@ -74,37 +74,7 @@ const Menu = () => {
       },
       name: "Fries",
       text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
-      buttonText: "Order 🍟",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
-      buttonText: "Order 🍟",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
-      buttonText: "Order 🍟",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: "200 ksh",
+      price: 200,
       buttonText: "Order 🍟",
     },
   ];

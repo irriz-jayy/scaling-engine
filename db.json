@@ -1,82 +1,11 @@
 {
   "orders": [
     {
-      "image": "src/assets/food assets/chicken.jpg",
-      "name": "Fried Chicken",
-      "price": 320,
-      "quantity": 2
-    },
-    {
-      "image": "src/assets/food assets/taco.jpg",
-      "name": "Beef Tacos",
-      "price": 250,
-      "quantity": 10
-    },
-    {
-      "image": "src/assets/food assets/fries.jpg",
       "name": "Fries",
+      "image": "/src/assets/food assets/fries.jpg",
       "price": 200,
-      "quantity": 2
-    },
-    {
-      "name": "Fries",
-      "price": "200 ksh",
       "quantity": 1,
-      "id": 1704354697700
-    },
-    {
-      "name": "Beef tacos",
-      "price": "250 ksh",
-      "quantity": 1,
-      "id": 1704354733226
-    },
-    {
-      "name": "Fried chicken",
-      "price": 320,
-      "quantity": 1,
-      "id": 1704354910409
-    },
-    {
-      "name": "Fried chicken",
-      "image": "/src/assets/food assets/chicken.jpg",
-      "price": 320,
-      "quantity": 1,
-      "id": 1704354976175
-    },
-    {
-      "name": "Fries",
-      "image": "/src/assets/food assets/fries.jpg",
-      "price": "200 ksh",
-      "quantity": 1,
-      "id": 1704355182677
-    },
-    {
-      "name": "Fries",
-      "image": "/src/assets/food assets/fries.jpg",
-      "price": "200 ksh",
-      "quantity": 1,
-      "id": 1704355207421
-    },
-    {
-      "name": "Fries",
-      "image": "/src/assets/food assets/fries.jpg",
-      "price": "200 ksh",
-      "quantity": 1,
-      "id": 1704355238725
-    },
-    {
-      "name": "Fries",
-      "image": "/src/assets/food assets/fries.jpg",
-      "price": "200 ksh",
-      "quantity": 1,
-      "id": 1704355272979
-    },
-    {
-      "name": "Fries",
-      "image": "/src/assets/food assets/fries.jpg",
-      "price": "200 ksh",
-      "quantity": 1,
-      "id": 1704355310138
+      "id": 1704355496573
     }
   ]
 }

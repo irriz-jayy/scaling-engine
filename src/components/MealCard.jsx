@@ -34,7 +34,7 @@ const MealCard = ({ data }) => {
       <div className="text-center min-h-40">
         <p className="text-lg font-main">{data.name}</p>
         <p className="font-paragraph">{data.text}</p>
-        <p className="text-lg font-main">{data.price}</p>
+        <p className="text-lg font-main">{data.price} ksh</p>
         <button
           className="h-10 my-2 border rounded-md font-main w-36 bg-secondary text-primary hover:bg-primary hover:text-secondary hover:border-4 hover:border-secondary"
           onClick={handleAddToOrder}
