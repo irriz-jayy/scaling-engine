@@ -1,11 +1,6 @@
-import React, { useState } from "react";
-import chicken from "../assets/food assets/chicken.jpg";
-import chover from "../assets/food assets/chickenhover.jpg";
-import taco from "../assets/food assets/taco.jpg";
-import thover from "../assets/food assets/tacohover.jpg";
-import fries from "../assets/food assets/fries.jpg";
-import fhover from "../assets/food assets/frieshover.jpg";
+import React, { useState, useEffect } from "react";
 import MealCard from "../components/MealCard";
+import { fetchFoods } from "../api/food";
 
 const Menu = () => {
   const categories = [
@@ -16,75 +11,28 @@ const Menu = () => {
     { name: "chicken 🍗", id: "chicken" },
     { name: "pizza 🍕", id: "pizza" },
   ];
-  const food = [
-    {
-      images: {
-        default: chicken,
-        hover: chover,
-      },
-      name: "Fried chicken",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: 320,
-      buttonText: "Order 🍗",
-    },
-    {
-      images: {
-        default: taco,
-        hover: thover,
-      },
-      name: "Beef tacos",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: 250,
-      buttonText: "Order 🌮",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: 200,
-      buttonText: "Order 🍟",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: 200,
-      buttonText: "Order 🍟",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: 200,
-      buttonText: "Order 🍟",
-    },
-    {
-      images: {
-        default: fries,
-        hover: fhover,
-      },
-      name: "Fries",
-      text: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, excepturi.",
-      price: 200,
-      buttonText: "Order 🍟",
-    },
-  ];
+
+  const [foods, setFoods] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedFoods = await fetchFoods();
+        setFoods(fetchedFoods);
+      } catch (error) {
+        // Handle error, e.g., display an error message
+        console.error("Error fetching foods:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const filteredFood =
+  const filteredFoods =
     selectedCategory === "all"
-      ? food
-      : food.filter((item) =>
+      ? foods
+      : foods.filter((item) =>
           item.name.toLowerCase().includes(selectedCategory)
         );
 
@@ -112,12 +60,12 @@ const Menu = () => {
         </div>
         {/* menu section */}
         <div className="flex flex-col flex-wrap items-center justify-center min-h-screen gap-4 p-2 md:flex-row">
-          {filteredFood.length === 0 ? (
+          {filteredFoods.length === 0 ? (
             <p className="text-lg text-center text-primary font-paragraph">
               Food not currently available for this category.
             </p>
           ) : (
-            filteredFood.map((item, index) => (
+            filteredFoods.map((item, index) => (
               <MealCard key={index} data={item} />
             ))
           )}

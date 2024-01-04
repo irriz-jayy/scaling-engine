@@ -1,3 +1,11 @@
 {
-  "orders": []
+  "orders": [
+    {
+      "name": "Fried chicken",
+      "image": "/assets/chicken-tmNchg9r.jpg",
+      "price": 320,
+      "quantity": 1,
+      "id": 1704356626298
+    }
+  ]
 }
