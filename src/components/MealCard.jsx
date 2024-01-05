@@ -10,7 +10,7 @@ const MealCard = ({ data }) => {
       // Call the addOrder function to add the item to orders
       const addedOrder = await addOrder({
         name: data.name,
-        image: data.images.default,
+        image: data.default_image,
         price: data.price,
         quantity: 1, // You can set the initial quantity here
       });
@@ -18,7 +18,7 @@ const MealCard = ({ data }) => {
       // Log the added order (you can handle it as needed)
       toast.success(`Added ${addedOrder.name} to your orders`);
     } catch (error) {
-      toast.error("Error adding item to orders:", error);
+      console.log("Error adding item to orders:", error);
     }
   };
 
