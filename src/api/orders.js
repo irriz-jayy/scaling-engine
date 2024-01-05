@@ -1,6 +1,6 @@
 // order.js
 
-const API_URL = "http://localhost:3001/orders";
+const API_URL = "http://localhost:3000/api/v1/orders";
 
 // Function to fetch orders
 export const fetchOrders = async () => {
