@@ -1,6 +1,6 @@
 // order.js
 
-const API_URL = "https://scaling-api-wxdx.onrender.com/api/v1/orders";
+const API_URL = "https://scaling-api-ncwd.onrender.com/api/v1/orders";
 
 // Function to fetch orders
 export const fetchOrders = async () => {

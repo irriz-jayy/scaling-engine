@@ -1,4 +1,4 @@
-const API_URL = "https://scaling-api-wxdx.onrender.com/api/v1/foods";
+const API_URL = "https://scaling-api-ncwd.onrender.com/api/v1/foods";
 
 export const fetchFoods = async () => {
   try {
